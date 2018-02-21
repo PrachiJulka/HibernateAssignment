@@ -9,8 +9,8 @@ import java.util.List;
 public class Author {
 //Q-9
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GeneratedValue(strategy =GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy =GenerationType.TABLE)
     @Column(name="Author_ID")
     Integer authorId;
     @Column(name="FirstName")
