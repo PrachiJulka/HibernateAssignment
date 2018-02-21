@@ -34,10 +34,8 @@ public class Author {
     @Column(name="DateOfBirth")
     Date dob;
 //Bidirectional
-    @OneToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(joinColumns = @JoinColumn(name="Author_ID")
-            ,inverseJoinColumns = @JoinColumn(name = "Book_ID"))
-    List<Book> book=new ArrayList<>();
+    @OneToMany(cascade = CascadeType.PERSIST,mappedBy = "author")
+     List<Book> book=new ArrayList<>();
 
     public List<Book> getBook() {
         return book;
