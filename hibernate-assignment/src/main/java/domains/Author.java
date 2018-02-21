@@ -34,7 +34,7 @@ public class Author {
     @Column(name="DateOfBirth")
     Date dob;
 //Bidirectional
-    @OneToMany(cascade = CascadeType.PERSIST,mappedBy = "author")
+    @ManyToMany(cascade = CascadeType.PERSIST)
      List<Book> book=new ArrayList<>();
 
     public List<Book> getBook() {

@@ -121,7 +121,6 @@ public class Execute {
         Session session=sessionFactory.openSession();
         session.beginTransaction();
         session.persist(author);
-
        /* session.save(author1);
         session.save(author2);
         session.save(author3);*/

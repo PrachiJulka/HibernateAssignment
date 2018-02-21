@@ -1,6 +1,8 @@
 package domains;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Book {
@@ -10,14 +12,14 @@ public class Book {
     private Integer bookId;
     private String bookName;
 
-    @ManyToOne
-    private Author author;
+    @ManyToMany(mappedBy = "book")
+    private List<Author> author=new ArrayList<>();
 
-    public Author getAuthor() {
+    public List<Author> getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(List<Author> author) {
         this.author = author;
     }
 
