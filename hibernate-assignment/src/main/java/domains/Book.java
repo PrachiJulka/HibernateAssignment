@@ -1,13 +1,16 @@
 package domains;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Book {
 
     @Id
-private Integer bookId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer bookId;
     private String bookName;
 
     public Integer getBookId() {

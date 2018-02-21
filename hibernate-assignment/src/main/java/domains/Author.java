@@ -34,6 +34,17 @@ public class Author {
     @Column(name="DateOfBirth")
     Date dob;
 
+    @OneToOne
+    Book book;
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
     public List<String> getSubjects() {
         return subjects;
     }
