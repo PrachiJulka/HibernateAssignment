@@ -1,30 +1,28 @@
 package domains;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int authorId;
+    Integer authorId;
     String firstName;
     String lastName;
-    int age;
+    Integer age;
 
-    public int getAuthorId() {
+    @Temporal(TemporalType.DATE)
+    Date dob;
+
+    public Integer getAuthorId() {
         return authorId;
     }
 
-    public void setAuthorId(int authorId) {
+    public void setAuthorId(Integer authorId) {
         this.authorId = authorId;
     }
-
-
-
 
     public String getFirstName() {
         return firstName;
@@ -42,12 +40,19 @@ public class Author {
         this.lastName = lastName;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
-   }
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+}
