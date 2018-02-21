@@ -33,8 +33,10 @@ public class Author {
     @Temporal(TemporalType.DATE)
     @Column(name="DateOfBirth")
     Date dob;
-//Unidirectional
+//Bidirectional
     @OneToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(joinColumns = @JoinColumn(name="Author_ID")
+            ,inverseJoinColumns = @JoinColumn(name = "Book_ID"))
     List<Book> book=new ArrayList<>();
 
     public List<Book> getBook() {
