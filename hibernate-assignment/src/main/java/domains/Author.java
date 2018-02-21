@@ -21,6 +21,17 @@ public class Author {
     @Column(name="Age")
     Integer age;
 
+    @Embedded
+    Address address;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Temporal(TemporalType.DATE)
     @Column(name="DateOfBirth")
     Date dob;
