@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Execute {
@@ -28,6 +29,7 @@ public class Execute {
        address.setLocation("Pitampura");
         address.setState("New Delhi");
         address.setStreetNumber(802);
+        author.setSubjects(Arrays.asList("Hindi","English","Science","Maths"));
 
         author.setAge(24);
         author.setFirstName("Prachi");

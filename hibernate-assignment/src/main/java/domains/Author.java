@@ -1,7 +1,9 @@
 package domains;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Author {
@@ -24,6 +26,23 @@ public class Author {
     @Embedded
     Address address;
 
+    @ElementCollection
+    List<String> subjects=new ArrayList<>();
+
+
+    @Temporal(TemporalType.DATE)
+    @Column(name="DateOfBirth")
+    Date dob;
+
+    public List<String> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(List<String> subjects) {
+        this.subjects = subjects;
+    }
+
+
     public Address getAddress() {
         return address;
     }
@@ -31,10 +50,6 @@ public class Author {
     public void setAddress(Address address) {
         this.address = address;
     }
-
-    @Temporal(TemporalType.DATE)
-    @Column(name="DateOfBirth")
-    Date dob;
 
     public Integer getAuthorId() {
         return authorId;
