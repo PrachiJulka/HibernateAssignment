@@ -8,12 +8,19 @@ public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="Author_ID")
     Integer authorId;
+    @Column(name="FirstName")
     String firstName;
+
+    @Column(name="LastName")
     String lastName;
+
+    @Column(name="Age")
     Integer age;
 
     @Temporal(TemporalType.DATE)
+    @Column(name="DateOfBirth")
     Date dob;
 
     public Integer getAuthorId() {
