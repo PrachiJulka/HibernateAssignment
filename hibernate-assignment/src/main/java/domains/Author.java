@@ -33,17 +33,19 @@ public class Author {
     @Temporal(TemporalType.DATE)
     @Column(name="DateOfBirth")
     Date dob;
+//Unidirectional
+    @OneToMany(cascade = CascadeType.PERSIST)
+    List<Book> book=new ArrayList<>();
 
-    @OneToOne
-    Book book;
-
-    public Book getBook() {
+    public List<Book> getBook() {
         return book;
     }
 
-    public void setBook(Book book) {
+    public void setBook(List<Book> book) {
         this.book = book;
     }
+
+
 
     public List<String> getSubjects() {
         return subjects;

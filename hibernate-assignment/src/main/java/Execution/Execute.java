@@ -20,6 +20,15 @@ public class Execute {
         String date1 = "12-08-1993";
         Book book=new Book();
         book.setBookName("RS Aggarwal");
+        Book book1=new Book();
+        book1.setBookName("Kathy Sierra");
+
+
+        Book book2=new Book();
+        book2.setBookName("Yashwant Kanetkar");
+
+        Book book3=new Book();
+        book2.setBookName("Balaguruswamy");
 
         Address address=new Address();
         address.setLocation("Pitampura");
@@ -70,7 +79,12 @@ public class Execute {
         author.setFirstName("Prachi");
         author.setLastName("Julka");
         author.setAddress(address);
-        author.setBook(book);
+        author.getBook().add(book);
+
+        author.getBook().add(book1);
+        author.getBook().add(book2);
+        author.getBook().add(book3);
+
 
       /*  author1.setAge(26);
         author1.setFirstName("Manhar");
@@ -106,8 +120,8 @@ public class Execute {
         SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
         Session session=sessionFactory.openSession();
         session.beginTransaction();
-        session.save(author);
-        session.save(book);
+        session.persist(author);
+
        /* session.save(author1);
         session.save(author2);
         session.save(author3);*/
